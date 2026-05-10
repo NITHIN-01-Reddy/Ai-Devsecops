@@ -59,3 +59,7 @@ jobs:
           ignore-unfixed: true
           vuln-type: 'os,library'
           severity: 'CRITICAL,HIGH'
+    
+          # Step 8 - Run Gitleaks Secret Scan
+      - name: Run Gitleaks Secret Scan
+        uses: gitleaks/gitleaks-action@v2
