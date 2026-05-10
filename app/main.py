@@ -28,7 +28,7 @@ def health_check():
 def simulate_error():
     logger.error("Simulated application error")
 
-    if random.randint(0, 1):
+    if random.randint(0, 1):  # nosec B311 - intentional failure simulation
         raise Exception("Random simulated failure")
 
     return {
