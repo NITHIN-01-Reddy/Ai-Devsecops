@@ -1,5 +1,5 @@
 import logging
-from pythonjsonlogger import jsonlogger
+from pythonjsonlogger.json import JsonFormatter
 import os
 
 LOG_DIR = "logs"
@@ -13,7 +13,7 @@ logger.setLevel(logging.INFO)
 
 logHandler = logging.FileHandler(f"{LOG_DIR}/app.log")
 
-formatter = jsonlogger.JsonFormatter(
+formatter = JsonFormatter(
     '%(asctime)s %(levelname)s %(name)s %(message)s'
 )
 

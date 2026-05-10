@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from routes.tasks import router as task_router
-from logger import logger
+from app.routes.tasks import router as task_router
+from app.logger import logger
 import random
 
 app = FastAPI(
