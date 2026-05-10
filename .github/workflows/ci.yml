@@ -11,29 +11,51 @@ on:
 
 jobs:
 
-  test-and-build:
+  test-build-security:
 
     runs-on: ubuntu-latest
 
     steps:
 
+      # Step 1 - Checkout Repository
       - name: Checkout Repository
         uses: actions/checkout@v4
 
+      # Step 2 - Setup Python
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
+      # Step 3 - Install Dependencies
       - name: Install Dependencies
         run: |
           pip install -r app/requirements.txt
 
+      # Step 4 - Run Automated Tests
       - name: Run Tests
         run: |
           pytest
 
+      # Step 5 - Run Bandit Security Scan
+      - name: Run Bandit Security Scan
+        run: |
+          pip install bandit
+          bandit -r app
+
+      # Step 6 - Build Docker Image
       - name: Build Docker Image
         run: |
           cd app
           docker build -t ai-devsecops-app .
+
+      # Step 7 - Run Trivy Vulnerability Scanner
+      - name: Run Trivy Vulnerability Scanner
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: 'ai-devsecops-app'
+          format: 'table'
+          exit-code: '0'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          severity: 'CRITICAL,HIGH'
