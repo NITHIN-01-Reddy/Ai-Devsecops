@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from app.routes.tasks import router as task_router
 from app.logger import logger
 import random
+from prometheus_fastapi_instrumentator import Instrumentator
 
 app = FastAPI(
     title="AI DevSecOps Platform",
@@ -34,3 +35,5 @@ def simulate_error():
     return {
         "message": "No error occurred"
     }
+
+Instrumentator().instrument(app).expose(app)
