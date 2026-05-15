@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ai-devsecops-deployment
+  namespace: ai-devsecops
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: ai-devsecops
+
+  template:
+    metadata:
+      labels:
+        app: ai-devsecops
+
+    spec:
+      containers:
+        - name: ai-devsecops-container
+
+          image: ai-devsecops-app:latest
+
+          imagePullPolicy: Never
+
+          ports:
+            - containerPort: 8000
