@@ -1,25 +1,33 @@
-# README.md
+# Updated README.md (with AI Log Analysis)
 
 ````md
 # AI-Powered DevSecOps CI/CD Platform
 
-A cloud-native DevSecOps platform built using FastAPI, Docker, Kubernetes, GitHub Actions, Prometheus, and modern security automation tools.
+A cloud-native AI-powered DevSecOps platform built using FastAPI, Docker, Kubernetes, GitHub Actions, Prometheus, and modern security automation tools.
 
 The platform demonstrates:
 - CI/CD automation
 - Security scanning
 - Containerization
-- Monitoring
+- Monitoring & observability
 - Kubernetes deployment
+- AI-based log analysis
 - Cloud-native infrastructure
 
 ---
 
 # Project Overview
 
-The AI-Powered DevSecOps CI/CD Platform automates software testing, security analysis, monitoring, and deployment using modern DevOps and DevSecOps tools.
+The AI-Powered DevSecOps CI/CD Platform automates software testing, security analysis, monitoring, deployment, and intelligent log analysis using modern DevOps and DevSecOps tools.
 
-This project simulates a real-world production-style DevSecOps workflow with automated CI/CD pipelines, containerized deployments, monitoring systems, and Kubernetes orchestration.
+This project simulates a real-world production-style DevSecOps workflow with:
+- automated CI/CD pipelines,
+- containerized deployments,
+- Kubernetes orchestration,
+- monitoring systems,
+- and AI-powered operational analysis.
+
+The platform integrates DevOps automation with AI-based log intelligence for automated error detection and operational monitoring.
 
 ---
 
@@ -31,6 +39,13 @@ This project simulates a real-world production-style DevSecOps workflow with aut
 - Health Check Endpoints
 - Structured JSON Logging
 - Error Simulation Endpoint
+
+## AI-Based Log Analysis
+- Intelligent log analysis endpoint
+- Error detection from logs
+- Severity classification
+- Recommendation generation
+- Operational monitoring insights
 
 ## DevOps & CI/CD
 - GitHub Actions CI/CD Pipeline
@@ -61,6 +76,7 @@ This project simulates a real-world production-style DevSecOps workflow with aut
 | Category | Technologies |
 |---|---|
 | Backend | FastAPI, Python |
+| AI Feature | AI-Based Log Analysis |
 | Containerization | Docker, Docker Compose |
 | CI/CD | GitHub Actions |
 | Testing | Pytest |
@@ -89,6 +105,8 @@ Security Scanning
   ↓
 Prometheus Monitoring
   ↓
+AI Log Analysis Engine
+  ↓
 Kubernetes Deployment
 ````
 
@@ -100,6 +118,9 @@ Kubernetes Deployment
 Ai-Devsecops/
 │
 ├── app/
+│   ├── ai/
+│   │   └── log_analyzer.py
+│   │
 │   ├── routes/
 │   ├── logger.py
 │   ├── main.py
@@ -115,6 +136,9 @@ Ai-Devsecops/
 │   ├── deployment.yaml
 │   ├── service.yaml
 │   └── namespace.yaml
+│
+├── logs/
+│   └── app.log
 │
 ├── .github/
 │   └── workflows/
@@ -254,6 +278,35 @@ http://localhost:8000/metrics
 
 ---
 
+# AI Log Analysis
+
+Generate logs using:
+
+```text
+http://localhost:8000/simulate-error
+```
+
+Run AI analysis:
+
+```text
+http://localhost:8000/analyze-logs
+```
+
+Example Response:
+
+```json
+{
+  "ai_log_analysis": {
+    "total_logs_analyzed": 25,
+    "errors_detected": 4,
+    "severity": "MEDIUM",
+    "recommendation": "Review application exceptions and monitor logs."
+  }
+}
+```
+
+---
+
 # Kubernetes Deployment
 
 ## Start Minikube
@@ -262,7 +315,9 @@ http://localhost:8000/metrics
 minikube start
 ```
 
-## Configure Docker Environment for Minikube
+---
+
+# Configure Docker Environment for Minikube
 
 ### PowerShell
 
@@ -338,13 +393,13 @@ Build Success
 
 # Future Enhancements
 
-* AI-based log analysis
-* Incident prediction system
+* AI-powered anomaly detection
+* Root cause analysis
 * Grafana dashboards
 * AWS EKS deployment
 * Helm charts
 * Horizontal Pod Autoscaling
-* AI chatbot for DevOps monitoring
+* AI incident prediction system
 
 ---
 
@@ -360,14 +415,15 @@ This project helped in understanding:
 * Container security
 * Infrastructure automation
 * DevSecOps practices
+* AI-based operational analysis
 
 ---
 
 # Conclusion
 
-The AI-Powered DevSecOps CI/CD Platform demonstrates modern DevOps, security automation, monitoring, and Kubernetes deployment practices.
+The AI-Powered DevSecOps CI/CD Platform demonstrates modern DevOps, security automation, monitoring, Kubernetes deployment, and AI-based operational intelligence practices.
 
-The project simulates a real-world cloud-native infrastructure workflow and provides practical exposure to production-grade DevOps tools and methodologies.
+The project simulates a real-world cloud-native infrastructure workflow and provides practical exposure to production-grade DevOps, DevSecOps, monitoring, and AI-assisted infrastructure analysis methodologies.
 
 ```
 ```
