@@ -418,6 +418,10 @@ This project helped in understanding:
 * AI-based operational analysis
 
 ---
+## Project Report
+
+📄 [View Project Report](docs/AI-Devsecops-Report.pdf)
+
 
 # Conclusion
 
